@@ -1,24 +1,290 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>iOS Test</title>
+  <meta name="robots" content="index, follow">
+<title>Rizz Lines — Salim</title>
+<meta name="google-site-verfication" content=google69e2c4c62a97487c.html />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
 <style>
-body {
-  font-family: system-ui;
-  padding: 20px;
+/* ================= RESET & SAFETY ================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
+
+html {
+  font-size: 16px;
+  width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #ffffff;
+  background: radial-gradient(circle at top left, #ff2d55, #6a0dad, #1c1c3c);
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ================= PARTICLES ================= */
+.particle {
+  position: relative; /* IMPORTANT: prevents layout breaking */
+  border-radius: 50%;
+  opacity: 0.6;
+  z-index: 0;
+  animation: float 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(120px, -240px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* Disable particles on small devices */
+@media (max-width: 768px) {
+  .particle {
+    display: none;
+  }
+}
+
+/* ================= HEADER ================= */
+.main-heading {
+  z-index: 1;
+  text-align: center;
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  margin: 40px 16px 20px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff, #00ffea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= LANDING ================= */
+.landing-container {
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto 60px;
+  padding: clamp(24px, 5vw, 40px);
+  text-align: center;
+  background: rgba(30, 30, 60, 0.9);
+  border-radius: 24px;
+  box-shadow: 0 0 40px rgba(255, 45, 108, 0.4);
+}
+
+.landing-container p {
+  font-size: clamp(0.95rem, 4vw, 1.1rem);
+  margin-bottom: 28px;
+  opacity: 0.9;
+}
+
+.start-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  padding: 14px 36px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  border-radius: 50px;
+  letter-spacing: 2px;
+  box-shadow: 0 0 25px rgba(255,65,108,0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.start-btn:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 35px rgba(255,65,108,0.8);
+}
+
+/* ================= DAILY SECTION ================= */
+.daily-section {
+  z-index: 1;
+  width: 100%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: clamp(20px, 5vw, 32px);
+  background: rgba(0,0,0,0.18);
+  border-radius: 22px;
+}
+
+.daily-section h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  background: linear-gradient(90deg, #ff00cc, #3333ff, #00ffea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ================= CARDS ================= */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+  width: 100%;
+}
+
+.card {
+  padding: 22px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #1f1c2c, #928dab);
+  text-align: center;
+  box-shadow: 0 0 18px rgba(255,255,255,0.15);
+}
+
+.card h2 {
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #f1f1f1;
+}
+
+.card button {
+  margin-top: 14px;
+  padding: 9px 20px;
+  font-size: 0.85rem;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ================= ABOUT ================= */
+#about-rizz {
+  z-index: 1;
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto 80px;
+  padding: clamp(18px, 5vw, 26px);
+  line-height: 1.7;
+}
+
+#about-rizz h1 {
+  margin-bottom: 18px;
+  font-size: clamp(1.4rem, 5vw, 2rem);
+}
+
+#about-rizz p {
+  font-size: 0.95rem;
+  color: #dddddd;
+  margin-bottom: 14px;
+}
+
+/* ================= VERY SMALL SCREENS ================= */
+@media (max-width: 420px) {
+  .start-btn {
+    width: 100%;
+  }
+}
+
 </style>
 </head>
+
 <body>
-<h1>iPhone works</h1>
-<p>If you see this, your hosting is fine.</p>
+
+<!-- PARTICLES -->
+<div class="particle" style="width:12px;height:12px;background:#ff416c;top:80%;left:20%"></div>
+<div class="particle" style="width:10px;height:10px;background:#ff2d55;top:50%;left:70%"></div>
+<div class="particle" style="width:14px;height:14px;background:#ff79c6;top:30%;left:40%"></div>
+
+<!-- HEADER -->
+<h1 class="main-heading">🔥 Rizz Lines — Salim</h1>
+
+<!-- LANDING -->
+<div class="landing-container">
+  <p>Your ultimate rizz & quotes generator 😎</p>
+  <a href="jgender.html" class="start-btn">🚀 Start Rizzin</a>
+
+</div>
+
+<!-- DAILY -->
+<div class="daily-section">
+  <h1>Daily Inspiration</h1>
+  <div class="container">
+
+    <div class="card">
+      <h2>✨ Quote of the Day</h2>
+      <p id="quote-text"></p>
+      <button onclick="copyText('quote-text')">Copy</button>
+    </div>
+
+    <div class="card">
+      <h2>💫 Rizzline of the Day</h2>
+      <p id="rizz-text"></p>
+      <button onclick="copyText('rizz-text')">Copy</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about-rizz">
+  <h1>About This Site</h1>
+  <p>SalimDev360 is your daily source of smooth rizz, clean quotes, and confidence-boosting lines.</p>
+  <p>Built for mobile, designed for vibes, and made to work everywhere.</p>
+</section>
+
+<script>
+const quotes = [
+  "The best way to get started is to quit talking and begin doing.",
+  "Success is not in what you have, but who you are.",
+  "Dream it. Wish it. Do it.",
+  "Great things never come from comfort zones."
+];
+
+const rizzlines = [
+  "Are you Wi-Fi? Because I feel the connection.",
+  "You must be tired — you’ve been running through my mind all day.",
+  "Are you a magician? Everyone else disappears when I look at you.",
+  "You’re not a notification, but you got my attention."
+];
+
+function getDaily(arr) {
+  const d = new Date();
+  return arr[d.getDate() % arr.length];
+}
+
+document.getElementById("quote-text").innerText = getDaily(quotes);
+document.getElementById("rizz-text").innerText = getDaily(rizzlines);
+
+function copyText(id) {
+  const text = document.getElementById(id).innerText;
+  const t = document.createElement("textarea");
+  t.value = text;
+  document.body.appendChild(t);
+  t.select();
+  document.execCommand("copy");
+  document.body.removeChild(t);
+  alert("Copied!");
+}
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  // all your JS here
+});
+</script>
+
 </body>
 </html>
-
-
 
 
 
