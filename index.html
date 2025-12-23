@@ -3,13 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="index, follow">
 <title>Rizz Lines — Salim</title>
-<meta name="google-site-verfication" content=google69e2c4c62a97487c.html />
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* ================= RESET & SAFETY ================= */
+/* ================= RESET ================= */
 *,
 *::before,
 *::after {
@@ -18,18 +17,16 @@
   padding: 0;
 }
 
-html {
-  font-size: 16px;
+html, body {
   width: 100%;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  min-height: 100vh;
-  width: 100%;
   font-family: 'Poppins', sans-serif;
   color: #ffffff;
   background: radial-gradient(circle at top left, #ff2d55, #6a0dad, #1c1c3c);
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -37,30 +34,25 @@ body {
 
 /* ================= PARTICLES ================= */
 .particle {
-  position: relative; /* IMPORTANT: prevents layout breaking */
+  position: absolute;
   border-radius: 50%;
   opacity: 0.6;
-  z-index: 0;
-  animation: float 20s linear infinite;
   pointer-events: none;
+  animation: float 18s linear infinite;
 }
 
 @keyframes float {
   0% { transform: translate(0, 0); }
-  50% { transform: translate(120px, -240px); }
+  50% { transform: translate(80px, -160px); }
   100% { transform: translate(0, 0); }
 }
 
-/* Disable particles on small devices */
 @media (max-width: 768px) {
-  .particle {
-    display: none;
-  }
+  .particle { display: none; }
 }
 
 /* ================= HEADER ================= */
 .main-heading {
-  z-index: 1;
   text-align: center;
   font-size: clamp(1.9rem, 6vw, 3rem);
   margin: 40px 16px 20px;
@@ -71,7 +63,6 @@ body {
 
 /* ================= LANDING ================= */
 .landing-container {
-  z-index: 1;
   width: 100%;
   max-width: 900px;
   margin: 30px auto 60px;
@@ -85,7 +76,6 @@ body {
 .landing-container p {
   font-size: clamp(0.95rem, 4vw, 1.1rem);
   margin-bottom: 28px;
-  opacity: 0.9;
 }
 
 .start-btn {
@@ -102,17 +92,16 @@ body {
   border-radius: 50px;
   letter-spacing: 2px;
   box-shadow: 0 0 25px rgba(255,65,108,0.6);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .start-btn:hover {
-  transform: scale(1.07);
+  transform: scale(1.05);
   box-shadow: 0 0 35px rgba(255,65,108,0.8);
 }
 
-/* ================= DAILY SECTION ================= */
+/* ================= DAILY ================= */
 .daily-section {
-  z-index: 1;
   width: 100%;
   max-width: 1100px;
   margin: 40px auto;
@@ -135,7 +124,6 @@ body {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 22px;
-  width: 100%;
 }
 
 .card {
@@ -154,7 +142,6 @@ body {
 .card p {
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #f1f1f1;
 }
 
 .card button {
@@ -170,7 +157,6 @@ body {
 
 /* ================= ABOUT ================= */
 #about-rizz {
-  z-index: 1;
   width: 100%;
   max-width: 900px;
   margin: 60px auto 80px;
@@ -180,7 +166,6 @@ body {
 
 #about-rizz h1 {
   margin-bottom: 18px;
-  font-size: clamp(1.4rem, 5vw, 2rem);
 }
 
 #about-rizz p {
@@ -189,13 +174,10 @@ body {
   margin-bottom: 14px;
 }
 
-/* ================= VERY SMALL SCREENS ================= */
+/* ================= SMALL SCREENS ================= */
 @media (max-width: 420px) {
-  .start-btn {
-    width: 100%;
-  }
+  .start-btn { width: 100%; }
 }
-
 </style>
 </head>
 
@@ -206,17 +188,13 @@ body {
 <div class="particle" style="width:10px;height:10px;background:#ff2d55;top:50%;left:70%"></div>
 <div class="particle" style="width:14px;height:14px;background:#ff79c6;top:30%;left:40%"></div>
 
-<!-- HEADER -->
 <h1 class="main-heading">🔥 Rizz Lines — Salim</h1>
 
-<!-- LANDING -->
 <div class="landing-container">
   <p>Your ultimate rizz & quotes generator 😎</p>
   <a href="jgender.html" class="start-btn">🚀 Start Rizzin</a>
-
 </div>
 
-<!-- DAILY -->
 <div class="daily-section">
   <h1>Daily Inspiration</h1>
   <div class="container">
@@ -236,7 +214,6 @@ body {
   </div>
 </div>
 
-<!-- ABOUT -->
 <section id="about-rizz">
   <h1>About This Site</h1>
   <p>SalimDev360 is your daily source of smooth rizz, clean quotes, and confidence-boosting lines.</p>
@@ -244,47 +221,52 @@ body {
 </section>
 
 <script>
-const quotes = [
-  "The best way to get started is to quit talking and begin doing.",
-  "Success is not in what you have, but who you are.",
-  "Dream it. Wish it. Do it.",
-  "Great things never come from comfort zones."
-];
-
-const rizzlines = [
-  "Are you Wi-Fi? Because I feel the connection.",
-  "You must be tired — you’ve been running through my mind all day.",
-  "Are you a magician? Everyone else disappears when I look at you.",
-  "You’re not a notification, but you got my attention."
-];
-
-function getDaily(arr) {
-  const d = new Date();
-  return arr[d.getDate() % arr.length];
-}
-
-document.getElementById("quote-text").innerText = getDaily(quotes);
-document.getElementById("rizz-text").innerText = getDaily(rizzlines);
-
-function copyText(id) {
-  const text = document.getElementById(id).innerText;
-  const t = document.createElement("textarea");
-  t.value = text;
-  document.body.appendChild(t);
-  t.select();
-  document.execCommand("copy");
-  document.body.removeChild(t);
-  alert("Copied!");
-}
-</script>
-<script>
 document.addEventListener("DOMContentLoaded", function () {
-  // all your JS here
+
+  const quotes = [
+    "The best way to get started is to quit talking and begin doing.",
+    "Success is not in what you have, but who you are.",
+    "Dream it. Wish it. Do it.",
+    "Great things never come from comfort zones."
+  ];
+
+  const rizzlines = [
+    "Are you Wi-Fi? Because I feel the connection.",
+    "You must be tired — you’ve been running through my mind all day.",
+    "Are you a magician? Everyone else disappears when I look at you.",
+    "You’re not a notification, but you got my attention."
+  ];
+
+  function getDaily(arr) {
+    const d = new Date();
+    return arr[d.getDate() % arr.length];
+  }
+
+  const quoteEl = document.getElementById("quote-text");
+  const rizzEl = document.getElementById("rizz-text");
+
+  if (quoteEl) quoteEl.innerText = getDaily(quotes);
+  if (rizzEl) rizzEl.innerText = getDaily(rizzlines);
+
+  window.copyText = function (id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    const t = document.createElement("textarea");
+    t.value = el.innerText;
+    document.body.appendChild(t);
+    t.select();
+    document.execCommand("copy");
+    document.body.removeChild(t);
+    alert("Copied!");
+  };
+
 });
 </script>
 
 </body>
 </html>
+
 
 
 
